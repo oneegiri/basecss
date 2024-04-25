@@ -1,0 +1,29 @@
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+iframe {
+    border:0;
+}
+
+figure {
+    margin: 0;
+    display: block;
+    overflow-x: auto;
+}
+
+figure>img,
+figure>picture>img {
+    display: block;
+    margin-inline: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-block: 1rem;
+}

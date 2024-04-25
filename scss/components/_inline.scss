@@ -1,0 +1,63 @@
+sup {
+    top: -0.4em;
+}
+
+sub {
+    top: 0.3em;
+}
+
+sup,
+sub {
+    vertical-align: baseline;
+    position: relative;
+}
+
+abbr[title] {
+    cursor: help;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+}
+
+cite {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: normal;
+}
+
+mark {
+    padding: 2px 5px;
+    border-radius: var(--border-radius);
+    background-color: var(--marked);
+    color: black;
+}
+
+kbd {
+    color: var(--preformatted);
+    border: 1px solid var(--preformatted);
+    border-bottom: 3px solid var(--preformatted);
+    border-radius: var(--border-radius);
+    padding: 0.1rem 0.4rem;
+}
+
+pre {
+    padding: 1rem 1.4rem;
+    max-width: 100%;
+    overflow: auto;
+    color: var(--preformatted);
+}
+
+pre code {
+    color: var(--preformatted);
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+code,
+pre,
+pre span,
+kbd,
+samp {
+    font-family: var(--mono-font);
+    color: var(--code);
+}

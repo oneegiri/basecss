@@ -1,0 +1,22 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Starter point for any project",
+  "scripts": {
+    "build:scss": "sass scss:dist/css --style=compressed --no-source-map && postcss dist/css/*.css --use autoprefixer -d dist/css",
+    "build:js": "babel js --out-dir dist/js && uglifyjs dist/js/*.js --output-dir dist/js --mangle --compress",
+    "watch:scss": "sass --watch scss:dist/css --color --no-source-map",
+    "watch:js": "",
+    "build": "npm run build:scss && npm run build:js",
+    "watch": "npm-run-all -p watch:scss watch:js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.70.0",
+    "uglify-js": "^3.17.4"
+  }
+}

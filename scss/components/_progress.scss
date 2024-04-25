@@ -1,0 +1,28 @@
+progress {
+    width: 100%;
+}
+
+progress:indeterminate {
+    background-color: var(--accent-bg);
+}
+
+progress::-webkit-progress-bar {
+    border-radius: var(--border-radius);
+    background-color: var(--accent-bg);
+}
+
+progress::-webkit-progress-value {
+    border-radius: var(--border-radius);
+    background-color: var(--accent);
+}
+
+progress::-moz-progress-bar {
+    border-radius: var(--border-radius);
+    background-color: var(--accent);
+    transition-property: width;
+    transition-duration: 0.3s;
+}
+
+progress:indeterminate::-moz-progress-bar {
+    background-color: var(--accent-bg);
+}

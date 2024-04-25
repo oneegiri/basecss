@@ -1,0 +1,25 @@
+.breadcrumb {
+    list-style-type: none;
+    margin: .2rem 0;
+    padding: .2rem 0;
+
+    @at-root #{&}__item {
+        display: inline-block;
+        margin: 0;
+        padding: .2rem 0;
+
+        &:not(:last-child) {
+            margin-right: .2rem;
+        }
+
+        &:not(:first-child)::before {
+            color: var(--text-light);
+            content: "/";
+            padding-right: .4rem;
+        }
+    }
+
+    @at-root #{&}__link {
+        color: var(--text-light);
+    }
+}

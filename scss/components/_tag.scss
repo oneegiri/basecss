@@ -1,0 +1,16 @@
+.tag {
+    background: var(--accent);
+    overflow: hidden;
+    padding: .3rem .6rem;
+    border-radius: calculateRem(30px);
+    background-color: var(--tag-bg);
+    font-size: calculateRem(14px);
+
+    @at-root #{&}__button {
+
+    }
+}
+
+/**
+<span class="tag">Biography<a class="tag__button" href="#" aria-label="Delete" role="button">Delete</a></span>
+*/

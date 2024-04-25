@@ -1,0 +1,59 @@
+/* Global variables. */
+:root,
+::backdrop {
+    /* Set sans-serif & mono fonts */
+    --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+        "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+        "Helvetica Neue", sans-serif;
+    --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    --border-radius: 5px;
+
+    --body-font-family: 'Arial';
+    --heading-font-family: 'Arial';
+
+    /* Default (light) theme */
+    --bg: #fff;
+    --accent-bg: #f5f7ff;
+    --shadow: 0 .25rem 1rem rgba(48, 55, 66, .15);
+    --text: #212121;
+    --text-white: #FFFFFF;
+    --text-light: #585858;
+    --border: #a2afb9;
+    --accent: #0d47a1;
+    --accent-hover: #1266e2;
+    --accent-text: var(--text-white);
+    --code: #d81b60;
+    --preformatted: #444444;
+    --marked: #ffdd33;
+    --disabled: #efefef;
+    --tag-bg: #eef0f3;
+    --info-color:#4bb1cf;
+    --warning-color:#ffba00;
+    --succes-color:#15CD72;
+    --error-color:#ED4F32;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+
+    :root,
+    ::backdrop {
+        color-scheme: dark;
+        --bg: #212121;
+        --accent-bg: #2b2b2b;
+        --text: #dcdcdc;
+        --text-light: #ababab;
+        --accent: #ffb300;
+        --accent-hover: #ffe099;
+        --accent-text: var(--bg);
+        --code: #f06292;
+        --preformatted: #ccc;
+        --disabled: #111;
+    }
+
+    /* Add a bit of transparency so light media isn't so glaring in dark mode */
+    img,
+    video {
+        opacity: 0.8;
+    }
+}

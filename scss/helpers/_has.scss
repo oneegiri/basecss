@@ -1,0 +1,43 @@
+.has {
+    @at-root #{&}\:shadow {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05) !important;
+    }
+
+    @at-root #{&}\:no-shadow{
+        box-shadow: none;
+    }
+
+    @at-root #{&}\:text--center{
+        text-align: center;
+    }
+    
+    @at-root #{&}\:text--right{
+        text-align: right;
+    }
+
+    @at-root #{&}\:items--center{
+        align-items: center;
+    }
+
+    @at-root #{&}\:no-border {
+        border: 0;
+    }
+
+    @at-root #{&}\:icon {
+        svg {
+            display: inline-block;
+            vertical-align: top;
+            path {
+                fill: var(--accent);
+            }
+        }
+
+        @at-root #{&}--alt {
+            svg {
+                path {
+                    fill: var(--text-white);
+                }
+            }
+        }
+    }
+}

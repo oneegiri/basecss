@@ -1,0 +1,46 @@
+button,
+.button,
+a.button,
+/* extra specificity to override a */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+label[type="button"] {
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-text);
+    padding: 0.5rem 0.9rem;
+    text-decoration: none;
+    line-height: normal;
+}
+
+.button[aria-disabled="true"],
+input:disabled,
+textarea:disabled,
+select:disabled,
+button[disabled] {
+    cursor: not-allowed;
+    background-color: var(--disabled);
+    border-color: var(--disabled);
+    color: var(--text-light);
+}
+
+button:enabled:hover,
+.button:not([aria-disabled="true"]):hover,
+input[type="submit"]:enabled:hover,
+input[type="reset"]:enabled:hover,
+input[type="button"]:enabled:hover,
+label[type="button"]:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    cursor: pointer;
+}
+
+.button:focus-visible,
+button:focus-visible:where(:enabled),
+input:enabled:focus-visible:where([type="submit"],
+    [type="reset"],
+    [type="button"]) {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}

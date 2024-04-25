@@ -1,0 +1,84 @@
+$columns: 12;
+$gutter: 5px;
+$font-size: 16px;
+$baseline: 8px;
+$icon-font: '';
+$font-family: 'Arial';
+$heading-font-family: 'Arial';
+
+$responsive: (
+    gutter: 0,
+    offset: 0
+);
+
+$colors: (
+    primary: #61b872,
+    secondary: #d39b39,
+    primary-hover: darken(#61b872, 5%),
+    secondary-hover: darken(#d39b39, 5%),
+    accent-bg: #f5f7ff,
+    text-color: #212121,
+    text-light: #585858,
+    preformatted-color: #444444,
+    color-white: #ffffff,
+    color-black: #000000,
+    border-color: #a2afb9,
+    disabled-color: #efefef,
+    marked-color: #ffdd33,
+    code-color: #d81b60,
+    tag-bg: #eef0f3,
+    warning:#ffba00,
+    success:#15CD72,
+    error:#ED4F32,
+    info:#4bb1cf,
+) !default;
+
+$fractions: (
+    full: 100%,
+    half: 50%,
+    one-third: 33.33333%,
+    two-thirds: 66.66666%,
+    one-fourth: 25%,
+    one-fifth: 20%,
+    two-fifths: 40%,
+    four-fifths: 80%,
+    one-sixth: 16.66666%,
+    five-sixths: 83.33333%
+) !default;
+
+$grid-breakpoints: (
+    xs: 0px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+) !default;
+
+$container-widths: (
+    xs: 100%,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+) !default;
+
+$directions: (
+    'l',
+    't',
+    'r',
+    'b',
+    'y',
+    'x'
+);
+
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+) !default;

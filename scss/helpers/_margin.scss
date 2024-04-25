@@ -1,0 +1,33 @@
+@each $breakpoint,
+$pixels in $grid-breakpoints {
+    @include generate-responsive-margin($breakpoint);
+}
+@each $spacerKey,
+$spacerValue in $spacers {
+    .m\:#{$spacerKey} {
+        margin: #{$spacerValue}!important;
+    }
+}
+
+@each $spacerKey,
+$spacerValue in $spacers {
+    @each $direction in $directions {
+        .m#{$direction}\:#{$spacerKey} {
+            @if ($direction == 'l') {
+                margin-left: #{$spacerValue}!important;
+            } @else if ($direction == 't') {
+                margin-top: #{$spacerValue}!important;
+            }  @else if ($direction == 'r') {
+                margin-right: #{$spacerValue}!important;
+            }  @else if ($direction == 'b') {
+                margin-bottom: #{$spacerValue}!important;
+            }  @else if ($direction == 'y') {
+                margin-top: #{$spacerValue}!important;
+                margin-bottom: #{$spacerValue}!important;
+            } @else if ($direction == 'x') {
+                margin-right: #{$spacerValue}!important;
+                margin-left: #{$spacerValue}!important;
+            }
+        }
+    }
+}

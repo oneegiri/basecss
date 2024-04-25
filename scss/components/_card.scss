@@ -1,0 +1,29 @@
+.card {
+    border: 0;
+    box-shadow: 0 .25rem 1rem rgba(48, 55, 66, .15);
+    height: 100%;
+    background-color: var(--bg);
+    border-radius: var(--border-radius);
+
+    @at-root #{&}__header {
+        padding: 0.8rem;
+    }
+
+    @at-root #{&}__title {
+        font-size: 1.25rem;
+    }
+
+    @at-root #{&}__subtitle {
+        color: var(--text-light);
+    }
+
+    @at-root #{&}__image {}
+
+    @at-root #{&}__body {
+        padding: 0.8rem;
+    }
+
+    @at-root #{&}__footer {
+        padding: 0.8rem;
+    }
+}

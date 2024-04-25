@@ -1,0 +1,25 @@
+.is {
+    @at-root #{&}\:rounded {
+        border-radius: calculateRem(10px);
+    }
+
+    @at-root #{&}\:block {
+        display: block;
+    }
+
+    @at-root #{&}\:sr {
+        @include hide-text;
+    }
+
+    @at-root #{&}\:absolute{
+        position: absolute;
+    }
+
+    @at-root #{&}\:relative {
+        position: relative;
+    }
+
+    @at-root #{&}\:flex {
+        display: flex;
+    }
+}

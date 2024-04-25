@@ -1,0 +1,28 @@
+.list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @at-root #{&}--horizontal {
+        display: flex;
+        flex-flow: row wrap;
+        .list__item {
+            flex:1;
+            &:not(:last-child) {
+                margin-bottom: 0;
+                margin-right: .5rem;
+            }
+        }
+    }
+
+    @at-root #{&}__item {
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    @at-root #{&}__link {
+        display: block;
+        padding: .5rem;
+    }
+}

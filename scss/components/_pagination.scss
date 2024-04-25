@@ -1,0 +1,28 @@
+.pagination {
+    display: flex;
+    list-style: none;
+    margin: .2rem 0;
+    padding: .2rem 0;
+
+    @at-root #{&}__item {
+        margin: .2rem .05rem;
+    }
+
+    @at-root #{&}__link {
+        border-radius: .1rem;
+        display: inline-block;
+        padding: .2rem .4rem;
+        text-decoration: none;
+
+        @at-root .pagination__item.active #{&} {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        @at-root .pagination__item.disabled {
+            cursor: default;
+            opacity: .5;
+            pointer-events: none;
+        }
+    }
+}

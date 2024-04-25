@@ -1,0 +1,38 @@
+.place {
+    @at-root #{&}\:top-left {
+        top:0;
+        left: 0;
+    }
+    @at-root #{&}\:top-right {
+        top:0;
+        right: 0;
+    }
+    @at-root #{&}\:center-top {
+        top:-0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @at-root #{&}\:middle-left {
+        top:50%;
+        transform: translateY(-50%);
+        left: -0.3rem;
+    }
+    @at-root #{&}\:middle-right {
+        top:50%;
+        transform: translateY(-50%);
+        right:-0.3rem;
+    }
+    @at-root #{&}\:bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+    @at-root #{&}\:bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+    @at-root #{&}\:center-bottom {
+        bottom:-0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

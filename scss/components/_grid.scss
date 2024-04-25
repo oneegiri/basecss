@@ -1,0 +1,61 @@
+@use 'sass:math';
+
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+
+    &.is\:gapless {
+        margin-left: 0;
+        margin-right: 0;
+        &>* {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &>* {
+        padding: 0 $gutter;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+}
+
+@for $i from 1 through $columns {
+    @each $breakpoint,
+    $pixels in $grid-breakpoints {
+        @include generate-responsive-columns($breakpoint, $i);
+
+        @if map-get($responsive, 'gutter')==1 {
+            @include generate-responsive-gutters($breakpoint);
+        }
+
+        @if map-get($responsive, 'offset')==1 {
+            @include generate-responsive-offset($breakpoint, $i);
+        }
+    }
+}
+
+
+
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include from_sm() {
+        margin: 0 auto;
+    }
+
+    @each $breakpoint,
+    $pixels in $grid-breakpoints {
+        @include generate-responsive-containers($breakpoint, $pixels);
+    }
+
+    @at-root #{&}--wide {
+        max-width: none;
+        width: 100%;
+    }
+}

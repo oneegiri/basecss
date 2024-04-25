@@ -1,0 +1,33 @@
+@each $breakpoint,
+$pixels in $grid-breakpoints {
+    @include generate-responsive-padding($breakpoint);
+}
+@each $spacerKey,
+$spacerValue in $spacers {
+    .p\:#{$spacerKey} {
+        padding: #{$spacerValue}!important;
+    }
+}
+
+@each $spacerKey,
+$spacerValue in $spacers {
+    @each $direction in $directions {
+        .p#{$direction}\:#{$spacerKey} {
+            @if ($direction == 'l') {
+                padding-left: #{$spacerValue}!important;
+            } @else if ($direction == 't') {
+                padding-top: #{$spacerValue}!important;
+            }  @else if ($direction == 'r') {
+                padding-right: #{$spacerValue}!important;
+            }  @else if ($direction == 'b') {
+                padding-bottom: #{$spacerValue}!important;
+            }  @else if ($direction == 'y') {
+                padding-top: #{$spacerValue};
+                padding-bottom: #{$spacerValue}!important;
+            } @else if ($direction == 'x') {
+                padding-right: #{$spacerValue}!important;
+                padding-left: #{$spacerValue}!important;
+            }
+        }
+    }
+}

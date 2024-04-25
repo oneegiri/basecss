@@ -1,0 +1,624 @@
+@use 'sass:math';
+
+@mixin generate-responsive-columns($breakpoint, $i) {
+    @if $breakpoint=='sm' {
+        @include from_sm() {
+            .#{$breakpoint}\:#{$i} {
+                flex: 0 0 math.div(100%, $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+            }
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @include from_md() {
+            .#{$breakpoint}\:#{$i} {
+                flex: 0 0 math.div(100%, $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+            }
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @include from_lg() {
+            .#{$breakpoint}\:#{$i} {
+                flex: 0 0 math.div(100%, $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+            }
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @include from_xl() {
+            .#{$breakpoint}\:#{$i} {
+                flex: 0 0 math.div(100%, $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+            }
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @include from_xxl() {
+            .#{$breakpoint}\:#{$i} {
+                flex: 0 0 math.div(100%, $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+            }
+        }
+    }
+}
+
+@mixin generate-responsive-offset($breakpoint, $i) {
+    @if $breakpoint=='sm' {
+        @include from_sm() {
+            .offset-#{$breakpoint}\:none {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .offset-#{$breakpoint}\:#{$i} {
+                &.to\:left {
+                    margin-right: math.div(100%, $columns) * $i;
+                }
+
+                &.to\:right {
+                    margin-left: math.div(100%, $columns) * $i;
+                }
+            }
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @include from_md() {
+            .offset-#{$breakpoint}\:none {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .offset-#{$breakpoint}\:#{$i} {
+                &.to\:left {
+                    margin-right: math.div(100%, $columns) * $i;
+                }
+
+                &.to\:right {
+                    margin-left: math.div(100%, $columns) * $i;
+                }
+            }
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @include from_lg() {
+            .offset-#{$breakpoint}\:none {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .offset-#{$breakpoint}\:#{$i} {
+                &.to\:left {
+                    margin-right: math.div(100%, $columns) * $i;
+                }
+
+                &.to\:right {
+                    margin-left: math.div(100%, $columns) * $i;
+                }
+            }
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @include from_xl() {
+            .offset-#{$breakpoint}\:none {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .offset-#{$breakpoint}\:#{$i} {
+                &.to\:left {
+                    margin-right: math.div(100%, $columns) * $i;
+                }
+
+                &.to\:right {
+                    margin-left: math.div(100%, $columns) * $i;
+                }
+            }
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @include from_xxl() {
+            .offset-#{$breakpoint}\:none {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .offset-#{$breakpoint}\:#{$i} {
+                &.to\:left {
+                    margin-right: math.div(100%, $columns) * $i;
+                }
+
+                &.to\:right {
+                    margin-left: math.div(100%, $columns) * $i;
+                }
+            }
+        }
+    }
+}
+
+@mixin generate-responsive-containers($breakpoint, $pixels) {
+    @if $breakpoint=='sm' {
+        @include from_sm() {
+            max-width: map-get($container-widths, $breakpoint);
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @include from_md() {
+            max-width: map-get($container-widths, $breakpoint);
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @include from_lg() {
+            max-width: map-get($container-widths, $breakpoint);
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @include from_xl() {
+            max-width: map-get($container-widths, $breakpoint);
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @include from_xxl() {
+            max-width: map-get($container-widths, $breakpoint);
+        }
+    }
+}
+
+@mixin generate-responsive-gutters($breakpoint) {
+    @if $breakpoint=='sm' {
+        @include from_sm() {
+            .gutter-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .gutter-left-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+            }
+
+            .gutter-right-#{$breakpoint}\:off {
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @include from_md() {
+            .gutter-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .gutter-left-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+            }
+
+            .gutter-right-#{$breakpoint}\:off {
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @include from_lg() {
+            .gutter-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .gutter-left-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+            }
+
+            .gutter-right-#{$breakpoint}\:off {
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @include from_xl() {
+            .gutter-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .gutter-left-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+            }
+
+            .gutter-right-#{$breakpoint}\:off {
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @include from_xxl() {
+            .gutter-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .gutter-left-#{$breakpoint}\:off {
+                padding-left: 0 !important;
+            }
+
+            .gutter-right-#{$breakpoint}\:off {
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
+
+@mixin generate-responsive-margin($breakpoint) {
+    @if $breakpoint=='sm' {
+        @each $direction in $directions {
+            @include from_sm() {
+                @include handleResponsiveMargin($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @each $direction in $directions {
+            @include from_md() {
+                @include handleResponsiveMargin($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @each $direction in $directions {
+            @include from_lg() {
+                @include handleResponsiveMargin($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @each $direction in $directions {
+            @include from_xl() {
+                @include handleResponsiveMargin($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @each $direction in $directions {
+            @include from_xxl() {
+                @include handleResponsiveMargin($direction, $breakpoint);
+            }
+        }
+    }
+}
+
+@mixin handleResponsiveMargin($direction, $breakpoint) {
+    @each $spacerKey, $spacerValue in $spacers {
+        .m#{$direction}\:#{$breakpoint}-#{$spacerKey} {
+            @if ($direction == 'l') {
+                margin-left: #{$spacerValue};
+            } @else if ($direction == 't') {
+                margin-top: #{$spacerValue};
+            }  @else if ($direction == 'r') {
+                margin-right: #{$spacerValue};
+            }  @else if ($direction == 'b') {
+                margin-bottom: #{$spacerValue};
+            }  @else if ($direction == 'y') {
+                margin-top: #{$spacerValue};
+                margin-bottom: #{$spacerValue};
+            } @else if ($direction == 'x') {
+                margin-right: #{$spacerValue};
+                margin-left: #{$spacerValue};
+            }
+        }
+    }
+}
+
+@mixin generate-responsive-padding($breakpoint) {
+    @if $breakpoint=='sm' {
+        @each $direction in $directions {
+            @include from_sm() {
+                @include handleResponsivePadding($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='md' {
+        @each $direction in $directions {
+            @include from_md() {
+                @include handleResponsivePadding($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='lg' {
+        @each $direction in $directions {
+            @include from_lg() {
+                @include handleResponsivePadding($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='xl' {
+        @each $direction in $directions {
+            @include from_xl() {
+                @include handleResponsivePadding($direction, $breakpoint);
+            }
+        }
+    }
+
+    @if $breakpoint=='xxl' {
+        @each $direction in $directions {
+            @include from_xxl() {
+                @include handleResponsivePadding($direction, $breakpoint);
+            }
+        }
+    }
+}
+
+@mixin handleResponsivePadding($direction, $breakpoint) {
+    @each $spacerKey, $spacerValue in $spacers {
+        .p#{$direction}\:#{$breakpoint}--#{$spacerKey} {
+            @if ($direction == 'l') {
+                padding-left: #{$spacerValue};
+            } @else if ($direction == 't') {
+                padding-top: #{$spacerValue};
+            }  @else if ($direction == 'r') {
+                padding-right: #{$spacerValue};
+            }  @else if ($direction == 'b') {
+                padding-bottom: #{$spacerValue};
+            }  @else if ($direction == 'y') {
+                padding-top: #{$spacerValue};
+                padding-bottom: #{$spacerValue};
+            } @else if ($direction == 'x') {
+                padding-right: #{$spacerValue};
+                padding-left: #{$spacerValue};
+            }
+        }
+    }
+}
+
+@mixin generate-fractions() {
+
+    @each $element,
+    $fraction in $fractions {
+        .is\:#{$element} {
+            width: $fraction;
+            padding: 0 $gutter;
+
+            @if($isFloat) {
+                float: left;
+            }
+
+            @else if($isFlex==1) {
+                flex: 0 0 auto;
+            }
+        }
+
+        .move\:#{$element} {
+            &.to\:left {
+                margin-right: $fraction;
+            }
+
+            &.to\:right {
+                margin-left: $fraction;
+            }
+        }
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before{
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: math.div($height, $width) * 100%;
+    }
+
+    & > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin hide-block {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}
+
+@mixin hide-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    line-height: 1px;
+    overflow: hidden;
+}
+
+@mixin ellipsis($axis, $param) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @if($axis=='width') {
+        max-width: $param;
+    }
+
+    @else if($axis=='height') {
+        max-height: $param;
+    }
+}
+
+@mixin init-icon-font {
+    font-family: $icon-font;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    // Enable Ligatures
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga"1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon-font($icon:'', $color:'', $font-size:1rem, $direction:before) {
+    @if $direction==after {
+        &:after {
+            @include init-icon-font;
+
+            @if $icon==data-icon {
+                content: attr(data-icon);
+            }
+
+            @else {
+                content: quote($icon);
+                color: map-get($colors, 'font-color');
+                font-size: $font-size;
+            }
+
+            @content;
+        }
+    }
+
+    @else {
+        &:before {
+            @include init-icon-font;
+
+            @if $icon==data-icon {
+                content: attr(data-icon);
+            }
+
+            @else {
+                content: quote($icon);
+                color: map-get($colors, 'font-color');
+                font-size: $font-size;
+            }
+
+            @content;
+        }
+    }
+}
+
+@mixin from_sm {
+    @media (min-width: map-get($grid-breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin from_md {
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin from_lg {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin from_xl {
+    @media (min-width: map-get($grid-breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin from_xxl {
+    @media (min-width: map-get($grid-breakpoints, 'xxl')) {
+        @content;
+    }
+}
+
+@mixin until_sm {
+    @media (max-width: map-get($grid-breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin until_md {
+    @media (max-width: map-get($grid-breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin until_lg {
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin until_xl {
+    @media (max-width: map-get($grid-breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin until_xxl {
+    @media (max-width: map-get($grid-breakpoints, 'xxl')) {
+        @content;
+    }
+}
+
+@mixin between_xs-sm {
+    @media (min-width: map-get($grid-breakpoints, 'xs')) and (max-width: map-get($grid-breakpoints, 'sm')) {
+        @content;
+    }
+}
+
+@mixin between_sm-md {
+    @media (min-width: map-get($grid-breakpoints, 'sm')) and (max-width: map-get($grid-breakpoints, 'md')) {
+        @content;
+    }
+}
+
+@mixin between_md-lg {
+    @media (min-width: map-get($grid-breakpoints, 'md')) and (max-width: map-get($grid-breakpoints, 'lg')) {
+        @content;
+    }
+}
+
+@mixin between_lg-xl {
+    @media (min-width: map-get($grid-breakpoints, 'lg')) and (max-width: map-get($grid-breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+@mixin between_xl-xxl {
+    @media (min-width: map-get($grid-breakpoints, 'xl')) and (max-width: map-get($grid-breakpoints, 'xxl')) {
+        @content;
+    }
+}
