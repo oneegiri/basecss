@@ -7,18 +7,7 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
-        position: relative;
-
-        &:after {
-            content: '';
-            position: absolute;
-            right: -1px;
-            top:50%;
-            transform: translateY(-50%);
-            width: 2px;
-            background-color: var(--disabled);
-            height:100%;
-        }
+        display: flex;
 
         @at-root .tab--vertical #{&} {
             @include from_md {
@@ -31,7 +20,30 @@
         padding: 1rem;
         margin: 0;
         width: 100%;
+        position: relative;
         cursor: pointer;
+        text-align: center;
+
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: var(--disabled);
+            height: 1px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }
+
+        @at-root .tab--vertical #{&} {
+            &:after {
+                right: 0;
+                top:50%;
+                transform: translateY(-50%);
+                width: 1px;
+                background-color: var(--disabled);
+                height:100%;
+            }
+        }
 
         &:hover, &:focus{
             color: var(--accent);
@@ -40,38 +52,19 @@
         &[aria-selected="true"]{
             color: var(--accent);
             position: relative;
-            font-weight: bold;
             &:after {
-                content: '';
-                position: absolute;
-                z-index: 2;
-                width: 4px;
-                height: 100%;
-                right: -2px;
-                top:50%;
-                transform: translateY(-50%);
                 background-color: var(--accent);
             }
         }
     }
 
     @at-root #{&}__pane {
-        padding: 1rem 2rem;
-        @include from_md {
-            width: 85%;
+        padding: 1rem;
+
+        @at-root .tab--vertical #{&} {
+            @include from_md {
+                width: 85%;
+            }
         }
     }
 }
-
-/**
-<div class="tab">
-    <ul class="tab__controls" role="tablist">
-        <li class="tab__control" id="tab-1" role="tab" aria-selected="true" aria-controls="panel-1" tabindex="0">
-            Tab1
-        </li>
-    </ul>
-    <div class="tab__pane" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-        Lorem ipsum
-    </div>
-</div>
-*/

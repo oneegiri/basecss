@@ -6,7 +6,7 @@
         "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
         "Helvetica Neue", sans-serif;
     --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    --border-radius: 5px;
+    --border-radius: 10px;
 
     --body-font-family: 'Arial';
     --heading-font-family: 'Arial';
@@ -20,6 +20,7 @@
     --text-light: #585858;
     --border: #a2afb9;
     --accent: #0d47a1;
+    --focus: rgba(13, 71, 161, .3);
     --accent-hover: #1266e2;
     --accent-text: var(--text-white);
     --code: #d81b60;
@@ -29,8 +30,47 @@
     --tag-bg: #eef0f3;
     --info-color:#4bb1cf;
     --warning-color:#ffba00;
-    --succes-color:#15CD72;
+    --success-color: rgb(16 185 129);
     --error-color:#ED4F32;
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    --prose-body: #374151;
+    --prose-headings: #111827;
+    --prose-lead: #4b5563;
+    --prose-links: #111827;
+    --prose-bold: #111827;
+    --prose-counters: #6b7280;
+    --prose-bullets: #d1d5db;
+    --prose-hr: #e5e7eb;
+    --prose-quotes: #111827;
+    --prose-quote-borders: #e5e7eb;
+    --prose-captions: #6b7280;
+    --prose-kbd: #111827;
+    --prose-kbd-shadows: 17 24 39;
+    --prose-code: #111827;
+    --prose-pre-code: #e5e7eb;
+    --prose-pre-bg: #1f2937;
+    --prose-th-borders: #d1d5db;
+    --prose-td-borders: #e5e7eb;
+    --prose-invert-body: #d1d5db;
+    --prose-invert-headings: #fff;
+    --prose-invert-lead: #9ca3af;
+    --prose-invert-links: #fff;
+    --prose-invert-bold: #fff;
+    --prose-invert-counters: #9ca3af;
+    --prose-invert-bullets: #4b5563;
+    --prose-invert-hr: #374151;
+    --prose-invert-quotes: #f3f4f6;
+    --prose-invert-quote-borders: #374151;
+    --prose-invert-captions: #9ca3af;
+    --prose-invert-kbd: #fff;
+    --prose-invert-kbd-shadows: 255 255 255;
+    --prose-invert-code: #fff;
+    --prose-invert-pre-code: #d1d5db;
+    --prose-invert-pre-bg: rgb(0 0 0 / 50%);
+    --prose-invert-th-borders: #4b5563;
+    --prose-invert-td-borders: #374151;
 }
 
 /* Dark theme */

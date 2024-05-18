@@ -1,0 +1,25 @@
+.modal {
+  border-radius: var(--border-radius);
+  padding: 1rem;
+
+  @at-root #{&}__header{
+
+  }
+
+  @at-root #{&}__title {
+    margin: 0;
+  }
+
+  @at-root #{&}__body {
+
+  }
+
+  @at-root #{&}__footer{
+
+  }
+}
+
+dialog::backdrop {
+  background-color: var(--color-black);
+  opacity: 0.6;
+}

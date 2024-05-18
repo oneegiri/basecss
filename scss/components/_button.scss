@@ -1,17 +1,16 @@
-button,
 .button,
-a.button,
-/* extra specificity to override a */
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-label[type="button"] {
-    border: 1px solid var(--accent);
+button {
     background-color: var(--accent);
     color: var(--accent-text);
-    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    line-height: 1.5;
+    letter-spacing: 0.025em;
+}
+
+a.button {
     text-decoration: none;
-    line-height: normal;
 }
 
 .button[aria-disabled="true"],
@@ -32,8 +31,6 @@ input[type="reset"]:enabled:hover,
 input[type="button"]:enabled:hover,
 label[type="button"]:hover {
     background-color: var(--accent-hover);
-    border-color: var(--accent-hover);
-    cursor: pointer;
 }
 
 .button:focus-visible,
@@ -41,6 +38,6 @@ button:focus-visible:where(:enabled),
 input:enabled:focus-visible:where([type="submit"],
     [type="reset"],
     [type="button"]) {
-    outline: 2px solid var(--accent);
-    outline-offset: 1px;
+    box-shadow: 0 0 0 3px var(--focus);
+    outline: 0;
 }

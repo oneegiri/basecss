@@ -11,16 +11,18 @@
     @at-root #{&}__list {
         position: absolute;
         list-style-type: none;
-        padding: 0;
+        padding: .5rem 0;
         margin: 0;
         background-color: var(--bg);
         left: 0;
         opacity: 0;
         transform: scale(0);
-        box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     }
 
     @at-root #{&}__item {
+        margin: 0;
+        padding: 0;
         &:not(:last-child){
             margin-bottom: .5rem;
         }
@@ -28,7 +30,7 @@
 
     @at-root #{&}__link {
         display: block;
-        padding: .5rem;
+        padding: .75rem 1rem;
     }
 }
 

@@ -1,3 +1,11 @@
+textarea,
+select,
+input {
+    width: 100%;
+    color: var(--text);
+    background-color: var(--color-white);
+}
+
 fieldset{
     padding: 0;
     margin: 0;
@@ -6,53 +14,40 @@ fieldset{
 
 textarea,
 select,
-input,
-button,
-.button {
+input:not([type="radio"]):not([type="checkbox"]){
     font-size: inherit;
     font-family: inherit;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    box-shadow: none;
     max-width: 100%;
-    display: inline-block;
+    border: 1px solid var(--border);
+
+    &:focus, &:focus-visible{
+        box-shadow: 0 0 0 3px var(--focus);
+        outline: 0;
+    }
+}
+
+::-webkit-resizer {
 }
 
 textarea,
 select,
-input,
+input:not([type="radio"]):not([type="checkbox"]),
 form button {
     margin-bottom: 0.5rem;
-}
-
-textarea,
-select,
-input {
-    color: var(--text);
-    background-color: var(--bg);
-    border: 1px solid var(--border);
 }
 
 label {
     display: block;
 }
 
-textarea:not([cols]) {
-    width: 100%;
-}
-
-textarea {
-    resize: vertical;
-}
-
 /* Add arrow to drop-down */
 select:not([multiple]) {
-    background-image: linear-gradient(45deg, transparent 49%, var(--text) 51%),
-        linear-gradient(135deg, var(--text) 51%, transparent 49%);
-    background-position: calc(100% - 15px), calc(100% - 10px);
-    background-size: 5px 5px, 5px 5px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8cGF0aCBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJtOCAxMCA0IDQgNC00Ii8+Cjwvc3ZnPgo=");
+    background-position: calc(100% - 5px);
+    background-size: 1.5rem;
     background-repeat: no-repeat;
-    padding-inline-end: 25px;
 }
 
 *[dir="rtl"] select:not([multiple]) {
@@ -62,14 +57,16 @@ select:not([multiple]) {
 /* checkbox and radio button style */
 input[type="checkbox"],
 input[type="radio"] {
-    vertical-align: middle;
     position: relative;
-    width: min-content;
+    width: auto;
+    padding: .5rem;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    margin-right: .25rem;
 }
 
-input[type="checkbox"]+label,
-input[type="radio"]+label {
-    display: inline-block;
+input[type="checkbox"]{
+    border-radius: .25rem;
 }
 
 input[type="radio"] {
@@ -88,11 +85,11 @@ input[type="checkbox"]:checked::after {
     height: 0.32em;
     border-radius: 0;
     position: absolute;
-    top: 0.05em;
-    left: 0.17em;
+    top: 0.11em;
+    left: 0.18em;
     background-color: transparent;
-    border-right: solid var(--bg) 0.08em;
-    border-bottom: solid var(--bg) 0.08em;
+    border-right: solid var(--color-white) 0.08em;
+    border-bottom: solid var(--color-white) 0.08em;
     font-size: 1.8em;
     transform: rotate(45deg);
 }
@@ -119,16 +116,6 @@ progress {
     -moz-appearance: none;
 }
 
-/* Makes input fields wider on smaller screens */
-@media only screen and (max-width: 720px) {
-
-    textarea,
-    select,
-    input {
-        width: 100%;
-    }
-}
-
 /* Set a height for color input */
 input[type="color"] {
     height: 2.5rem;
@@ -147,4 +134,10 @@ input[type="range"] {
 input[type="color"] {
     height: 2.5rem;
     padding: 0.2rem;
+}
+
+.checkbox, .radio{
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
