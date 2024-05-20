@@ -22,22 +22,4 @@
     @at-root #{&}\:no-border {
         border: 0;
     }
-
-    @at-root #{&}\:icon {
-        svg {
-            display: inline-block;
-            vertical-align: top;
-            path {
-                fill: var(--accent);
-            }
-        }
-
-        @at-root #{&}--alt {
-            svg {
-                path {
-                    fill: var(--text-white);
-                }
-            }
-        }
-    }
 }

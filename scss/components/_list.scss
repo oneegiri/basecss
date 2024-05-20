@@ -19,10 +19,10 @@
         &:not(:last-child) {
             margin-bottom: .5rem;
         }
-    }
 
-    @at-root #{&}__link {
-        display: block;
-        padding: .5rem;
+        a {
+            display: block;
+            padding: .5rem;
+        }
     }
 }
